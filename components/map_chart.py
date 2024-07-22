@@ -56,17 +56,15 @@ def render(app: Dash, data: pd.DataFrame) -> html.Div:
             featureidkey="properties.name",
             locations=value_lst,
             color=filtered_data[DataSchema.STD],
-            color_continuous_scale="Viridis",
+            color_continuous_scale="Bluyl",
             hover_name=hover_data,
             mapbox_style="carto-positron",
             center={"lat": 13.342077, "lon": 100.5018},
             zoom=4.3,
             opacity=0.7,
             labels={
-                "eng_name": "Province",
-                "totalmale": "ชาย",
-                "totalfemale": "หญิง",
-                "totalstd": "รวม",
+                "locations": "จังหวัด",
+                "color": "จำนวนคนทั้งหมด",
             },
         )
 
