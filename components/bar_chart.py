@@ -1,18 +1,11 @@
 import pandas as pd
 import plotly.express as px
-import json
 from dash import Dash, dcc, html
 from dash.dependencies import Input, Output
-from urllib.request import urlopen
+
 
 from components.loader import DataSchema
 from . import ids
-
-RONGREAN_DATA = px.data.medals_long()
-with urlopen(
-    "https://raw.githubusercontent.com/apisit/thailand.json/master/thailandWithName.json"
-) as response:
-    thai_map = json.load(response)
 
 
 def render(app: Dash, data: pd.DataFrame) -> html.Div:

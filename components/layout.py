@@ -1,7 +1,7 @@
 from dash import Dash, html
 import pandas as pd
 
-from . import bar_chart, dropdown
+from . import bar_chart, dropdown, map_chart
 
 
 def create_layout(app: Dash, data: pd.DataFrame) -> html.Div:
@@ -16,6 +16,7 @@ def create_layout(app: Dash, data: pd.DataFrame) -> html.Div:
                     dropdown.render(app, data),
                 ],
             ),
+            map_chart.render(app, data),
             bar_chart.render(app, data),
         ],
     )

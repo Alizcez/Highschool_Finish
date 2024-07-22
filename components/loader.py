@@ -11,7 +11,6 @@ class DataSchema:
 
 
 def load_transaction_data(path: str) -> pd.DataFrame:
-    # load the data from a json file
     data = pd.read_json(
         path,
         dtype={
